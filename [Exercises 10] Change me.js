@@ -6,15 +6,16 @@ if (arr.length === 0) {
 
 for (var i = 0; i< arr.length; i++) {
   // console.log(typeof(i))
-    var person = {}; 
+    var person = {};
+    var yearNow = 2019  
     person.firstName = arr[i][0];
     person.lastName = arr[i][1];
     person.gender = arr[i][2];
-    if (arr[i][3] === undefined) {
+    if (arr[i][3] === undefined || arr[i][3] > yearNow) {
       person.age = 'Invalid Birth Year';
     }
     else {
-      person.age = 2019 - arr[i][3]
+      person.age = yearNow - arr[i][3]
     }
     console.log((i+1) + ". " +person.firstName+ " " +person.lastName+ ", ");
     console.log(person)

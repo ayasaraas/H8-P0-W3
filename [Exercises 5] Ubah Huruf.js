@@ -1,11 +1,16 @@
 function ubahHuruf(kata) {
   var alfabet = 'abcdefghijklmnopqrstuvwxyz';
-  var urutan = 0; //untuk menampung urutan kata[i] di alfabet
   var nextWord = '';
 
   for (var i = 0; i < kata.length; i++) {
-    urutan = alfabet.indexOf(kata[i]);
-    nextWord += alfabet[urutan+1]
+    if (kata[i] === 'z') {
+       nextWord = nextWord + alfabet[0]
+     }
+   for (var j = 0; j < alfabet.length; j++) {
+     if (kata[i] === alfabet[j] && kata[i] != 'z') {
+       nextWord = nextWord + alfabet[j+1]
+     }
+   }
   }
   return nextWord;
 }
